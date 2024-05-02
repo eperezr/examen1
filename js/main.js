@@ -1,127 +1,126 @@
+const bolivianos = 6.92; // id=10 se refiere a bolivianos
+const pesosChile = 942.04; // id=20 se refiere a Pesos Chilenos
+const pesosMex = 17.02; // id=30 se refiere a Pesos Mexicano
+const pesosArge = 876.75; // id=40 se refiere a Pesos Argentinos
+const dolar = 1; // id=50 se refiere a Dolares
+var aux = 0; //variable auxiliar 1 para la conversion de monedas
+var aux_2; // variable auxiliar 2
+var auto = new Boolean (false) // automatizar el cambio
+const moneda1 = document.getElementById("monto1");
+const cambio1 = document.getElementById("de");
 
-function convertir() {
+const moneda2 = document.getElementById("monto2");
+const cambio2 = document.getElementById("a");
 
-  const bolivianos = 6.92; //10 bolivianos
-  const pesosChile = 942.04; //20 Pesos Chilenos
-  const pesosMex = 17.02; //30 Pesos Mexicano
-  const pesosArge = 876.75; //40 Pesos Argentinos
-  const dolar = 1; //50 Dolares
+function convertir() {  
+  const cambio_1 = cambio1.value;
+  const cambio_2 = cambio2.value;
   
+  console.log(cambio1.value)
+  console.log(cambio2.value)
+
+  if (cambio1.value == 10){  //de Bolivianos a
+    if (cambio2.value == 10)
+      aux = (moneda1.value); //a bolivianos
+
+    if (cambio2.value == 20)
+      aux = (moneda1.value) * (pesosChile/bolivianos); //a pesos Chilenos
+      
+    if (cambio2.value == 30)
+      aux = (moneda1.value) * (pesosMex/bolivianos); // a pesos mexicanos
     
-  var moneda = document.getElementById("monto").value;
-  document.getElementById("moneda");
-  const cambio1 = document.getElementById("de").value;
-  const cambio2 = document.getElementById("a").value;
-  
-  var cambioMoneda;
-  
-  console.log(cambio1)
-  console.log(cambio2)
-  console.log(cambioMoneda)
-
-
-if (cambio1 == 10){  //de Bolivianos a
-  switch(cambio2){
-  case cambio2 === 10:
-    cambioMoneda = moneda; //a bolivianos
-    document.getElementById('respuesta').innerHTML = cambioMoneda.toFixed(2)
-    break;
-  case cambio2 === 20:
-    cambioMoneda = moneda * (bolivianos/pesosChile); //a pesos Chilenos
-    break;
-  case cambio2 === 30:
-    cambioMoneda = moneda * (bolivianos/pesosMex); // a pesos mexicanos
-    break;
-  case cambio2 === 40:
-    cambioMoneda = moneda * (bolivianos/pesosArge); // a pesos argentinos
-    break;
-  case cambio2 === 50:
-    cambioMoneda = moneda * (bolivianos/dolar); // a dolares
-    break;
-  }
-
-} else if (cambio1 == 20){ // de pesos Chilenos a
-  switch(cambio2){
-  case cambio2 === 10:
-    cambioMoneda = moneda * (pesosChile/bolivianos); //a bolivianos
-    break;
-  case cambio2 === 20:
-    cambioMoneda = moneda; //a pesos Chilenos
-    break;
-  case cambio2 === 30:
-    cambioMoneda = moneda * (pesosChile/pesosMex); // a pesos mexicanos
-    break;
-  case cambio2 === 40:
-    cambioMoneda = moneda * (pesosChile/pesosArge); // a pesos argentinos
-    break;
-  case cambio2 === 50:
-    cambioMoneda = moneda * (pesosChile/dolar); // a dolares
-    break;
-  }
-
-} else if (cambio1 == 30) { // de pesos mexicanos a
-  switch(cambio2){
-  case cambio2 === 10:
-    cambioMoneda = moneda * (pesosMex/bolivianos); // a Bolivianos
-    break;
-  case cambio2 === 20: 
-    cambioMoneda = moneda * (pesosMex/pesosChile); // a pesos Chilenos
-    break;
-  case cambio2 === 30:
-    cambioMoneda = moneda; // a pesos mexicanos
-    break;
-  case cambio2 === 40:
-    cambioMoneda = moneda * (pesosMex/pesosArge); // a pesos argentinos
-    break;
-  case cambio2 === 50:
-    cambioMoneda = moneda * (pesosMex/dolar); // a dolares
-    break;
-  }
-
-} else if (cambio1 == 40) { // de pesos argentinos a
-  switch(cambio2){
-  case cambio2 === 10:
-    cambioMoneda = moneda * (pesosArge/bolivianos); // a Bolivianos
-    break;
-  case cambio2 === 20: 
-    cambioMoneda = moneda * (pesosArge/pesosChile); // a pesos Chilenos
-    break;
-  case cambio2 === 30:
-    cambioMoneda = moneda * (pesosArge/pesosMex); // a pesos mexicanos
-    break;
-  case cambio2 === 40:
-    cambioMoneda = moneda ; // a pesos argentinos
-    break;
-  case cambio2 === 50:
-    cambioMoneda = moneda * (pesosArge/dolar); // a dolares
-    break;
-  }
-
-}else if (cambio1 == 50) { // de dolar a
-  switch(cambio2){
-  case cambio2 === 10:
-    cambioMoneda = moneda * (dolar/bolivianos); // a Bolivianos
-    break;
-  case cambio2 === 20: 
-    cambioMoneda = moneda * (dolar/pesosChile); // a pesos Chilenos
-    break;
-  case cambio2 === 30:
-    cambioMoneda = moneda * (dolar/pesosMex); // a pesos mexicanos
-    break;
-  case cambio2 === 40:
-    cambioMoneda = moneda * (dolar/pesosArge) ; // a pesos argentinos
-    break;
-  case cambio2 === 50:
-    cambioMoneda = moneda; // a dolares
-    break;
-  }
+    if (cambio2.value == 40)
+      aux = (moneda1.value) * (pesosArge/bolivianos); // a pesos argentinos
+    
+    if (cambio2.value == 50)
+      aux = (moneda1.value) * (dolar/bolivianos); // a dolares
 }
+
+if (cambio1.value == 20){  //de Pesos Chilenos a
+  if (cambio2.value == 10)
+    aux = (moneda1.value) * (bolivianos/pesosChile); //a bolivianos
+
+  if (cambio2.value == 20)
+    aux = (moneda1.value); //a pesos Chilenos
+    
+  if (cambio2.value == 30)
+    aux = (moneda1.value) * (pesosMex/pesosChile); // a pesos mexicanos
+  
+  if (cambio2.value == 40)
+    aux = (moneda1.value) * (pesosArge/pesosChile); // a pesos argentinos
+  
+  if (cambio2.value == 50)
+    aux = (moneda1.value) * (dolar/pesosChile); // a dolares
 }
+
+if (cambio1.value == 30){  //de Pesos Mexicanos a
+  if (cambio2.value == 10)
+    aux = (moneda1.value) * (bolivianos/pesosMex); //a bolivianos
+
+  if (cambio2.value == 20)
+    aux = (moneda1.value) * (pesosChile/pesosMex); //a pesos Chilenos
+    
+  if (cambio2.value == 30)
+    aux = (moneda1.value); // a pesos mexicanos
+  
+  if (cambio2.value == 40)
+    aux = (moneda1.value) * (pesosArge/pesosMex); // a pesos argentinos
+  
+  if (cambio2.value == 50)
+    aux = (moneda1.value) * (dolar/pesosMex); // a dolares
+}
+
+if (cambio1.value == 40){  //de Pesos Argentinos a
+  if (cambio2.value == 10)
+    aux = (moneda1.value) * (bolivianos/pesosArge); //a bolivianos
+
+  if (cambio2.value == 20)
+    aux = (moneda1.value) * (pesosChile/pesosArge); //a pesos Chilenos
+    
+  if (cambio2.value == 30)
+    aux = (moneda1.value) * (pesosMex/pesosArge); // a pesos mexicanos
+  
+  if (cambio2.value == 40)
+    aux = (moneda1.value); // a pesos argentinos
+  
+  if (cambio2.value == 50)
+    aux = (moneda1.value) * (dolar/pesosArge); // a dolares
+}
+
+if (cambio1.value == 50){  //de Dolar a
+  if (cambio2.value == 10)
+    aux = (moneda1.value) * (bolivianos/dolar); //a bolivianos
+
+  if (cambio2.value == 20)
+    aux = (moneda1.value) * (pesosChile/dolar); //a pesos Chilenos
+    
+  if (cambio2.value == 30)
+    aux = (moneda1.value) * (pesosMex/dolar); // a pesos mexicanos
+  
+  if (cambio2.value == 40)
+    aux = (moneda1.value) * (pesosArge/dolar); // a pesos argentinos
+  
+  if (cambio2.value == 50)
+    aux = (moneda1.value); // a dolares
+}
+moneda2.value = aux;
+console.log(aux)
+}
+
+
+
+
+//cambio de manera automatica sin pulsar el boton de calcular
+
+//cambio1.addEventListener('change', convertir);
+//moneda1.addEventListener('input', convertir);
+//cambio2.addEventListener('change', convertir);
+//moneda2.addEventListener('input', convertir);
 
 
 const btn = document.getElementById('calcular');
 btn.addEventListener('click', () => {
- alert(moneda);
+convertir();
 })
 
-
+convertir();
