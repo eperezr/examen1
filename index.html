@@ -7,13 +7,15 @@
   <title>Examen de Javascript</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
   <div class="title">Convertidor de divisas</div>
-  <div class="input">
+  <div class="moneda">
     <label for="monto">Cantidad:</label>
-    <input type="text" id="monto" onchange="convertir()" placeholder="Ingresa aca el monto del dinero">
+    <input type="number" id="monto1" placeholder="0" value="1">
   </div>
-  <div class="input">
+
+  <div class="tipoMoneda">
     <label for="de">De:</label>
     <select name="de" id="de">
       <option value="10">Bolivianos</option>
@@ -23,7 +25,13 @@
       <option value="50">Dolares</option>
     </select>
   </div>
-  <div class="input">
+
+  <div class="buttonContainer">
+    <button class="btn" id="cambio1"> Cambiar divisas </button>
+    <div class="cambio" id="cambio"></div>
+  </div>
+
+  <div class="tipoMoneda">
     <label for="a">A:</label>
     <select name="a" id="a">
       <option value="10">Bolivianos</option>
@@ -33,12 +41,18 @@
       <option value="50">Dolares</option>
     </select>
   </div>
+
   <div class="buttonContainer">
     <button id="calcular">Calcular</button>
   </div>
-  <div class="input">
-    <label for="respuesta">Resultado:</label>
-    <input type="text" id="respuesta">
+
+  <div class="buttonContainer">
+    <button id="autom">Cálculo Automático</button>
+  </div>
+
+  <div class="moneda">
+    <label for="resultado">Resultado:</label>
+    <input type="number" id="monto2" placeholder="0">
   </div>
   
   <script src="./js/main.js"></script>
